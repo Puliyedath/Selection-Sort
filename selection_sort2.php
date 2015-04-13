@@ -3,6 +3,8 @@
         $temp = $input[$minIndex] ;
         $input[$minIndex] = $input[$index];
         $input[$index] = $temp;
+        var_dump(implode($input,"\n"));
+        echo "<br>";
         return $input;
 
     }
@@ -28,7 +30,8 @@
                 $maxIndex = $j;
             }
         }
-        $input = swap($input, $minIndex, $maxIndex);
+        $input = swap($input, $minIndex, $k);
+        $input = swap($input, $maxIndex, count($input) - $k);
     }
 
     echo "<br>";
